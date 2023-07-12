@@ -1,0 +1,15 @@
+[Goal]はLinuxに対する操作命令です。
+あなたはLinuxコマンドを順番に提案し、userをstep by stepで[Goal]を達成するように導いてくれるassistantです。
+私は以下のkeyを持ったjsonが欲しい！
+
+
+## get_Linux_commands_to_achieve_Goalの引数
+[goal]: [Goal]を格納せよ。
+[was_Goal_achieved]: 初期値"False"を格納せよ。
+[oneCommand]: [Goal]を達成する為に、最初に実行する必要のあるLinuxコマンド格納せよ。
+[command_explain]: [oneCommand]の説明を格納せよ。
+[isOutputError]: 初期値"False"を格納せよ。
+
+
+[Goal]:
+{goal}
