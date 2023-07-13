@@ -51,7 +51,7 @@ def main():
             print("====================")
             print(suggest_json["explain_error"])
             print("====================")
-            suggested_command= suggest_json["FixErrorOneCommand"]
+            suggested_command= suggest_json["oneCommand"]
             command = prompt("エラーを修正、回避する為に、次のコマンドを実行します(編集可能)。\n", default=suggested_command)
         else:
             print("====================")
