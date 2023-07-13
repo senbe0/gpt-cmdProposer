@@ -69,21 +69,21 @@ class ChatSession:
                             "type": "string",
                             "description": "初期値はFalse。"
                         },
-                        "oneCommand_to_fix_error": {
+                        "LinuxCommand_to_fix_error": {
                             "type": "string",
                             "description": "エラーを修正、または回避するような別のコマンドを格納する。"
                         },
-                        "explain_oneCommand_to_fix_error": {
+                        "explain_error": {
                             "type": "string",
-                            "description": "oneCommand_to_fix_errorの説明等を格納する。"
+                            "description": "errorの説明等を格納する。"
                         }
                     },
                     "required": ["goal",
                                  "was_Goal_achieved",
                                  "oneCommand",
                                  "explain_command",
-                                 "oneCommand_to_fix_error",
-                                 "explain_oneCommand_to_fix_error",
+                                 "LinuxCommand_to_fix_error",
+                                 "explain_error",
                                  "isOutputError"]
                 }
             }

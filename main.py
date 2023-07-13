@@ -49,9 +49,9 @@ def main():
             except:
                 pass
             print("====================")
-            print(suggest_json["explain_oneCommand_to_fix_error"])
+            print(suggest_json["explain_error"])
             print("====================")
-            suggested_command= suggest_json["oneCommand_to_fix_error"]
+            suggested_command= suggest_json["LinuxCommand_to_fix_error"]
             command = prompt("エラーを修正、回避する為に、次のコマンドを実行します(編集可能)。\n", default=suggested_command)
         else:
             print("====================")
