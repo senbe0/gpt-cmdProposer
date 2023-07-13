@@ -9,7 +9,7 @@
 [oneCommand]: [今まで実行したコマンド]を確認し、[Goal]を達成する為に、次に、実行する必要のあるLinuxコマンド格納せよ。
 [explain_command]: [oneCommand]の説明を格納せよ。
 [isOutputError]: 出力結果を見て、エラーが発生したと判断される場合"True"を格納せよ。
-[oneCommand_to_fix_error]: 出力結果を見て、エラーが発生したと判断される場合は、エラーを修正、または回避するような別のLinuxコマンドを格納せよ。
+[oneCommand_to_fix_error]: 出力結果を見て、エラーが発生したと判断される場合は、そのエラーを修正、または回避するような別のLinuxコマンドを格納せよ。
 [explain_oneCommand_to_fix_error]:エラーが発生したと判断される場合は、その理由と、oneCommand_to_fix_errorのコマンドの説明を格納せよ。
 
 

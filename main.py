@@ -1,4 +1,5 @@
 import os
+import json
 from typing import List
 from prompt_toolkit import prompt
 
@@ -27,9 +28,9 @@ def main():
     goal = input("こんにちは、あなたをサポートします。\n最終目標を入力してください: ")
     chat = gpt.ChatSession(goal)
     suggest_json = chat.send_msg()
+    chat.delete_msg()
     while True:
         print("executed commands: ", excuted_commands)
-        chat.delete_msg()
         if suggest_json["was_Goal_achieved"] == "True":
             print("====================")
             print("以下の設定した目標が達成されました。プログラムを終了します。")
@@ -73,10 +74,10 @@ def main():
         print("送信用Output^^^^^^^^^^")
 
         suggest_json = chat.send_msg()
+        assistant_msg = {"role": "assistant", "content": json.dumps(suggest_json)}
+        chat.append_msg(assistant_msg)
 
         
-
-
     
 if __name__ == "__main__":
     main()
