@@ -64,7 +64,7 @@ def main():
         last_five_lines = output_lines[-5:]
 
         reply_content = make_reply_prompt(goal, excuted_commands, last_five_lines)
-        reply_msg = {"role": "system", "content": reply_content}
+        reply_msg = {"role": "user", "content": reply_content}
 
         chat.append_msg(reply_msg)
 
