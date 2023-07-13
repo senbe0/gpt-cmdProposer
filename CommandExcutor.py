@@ -3,6 +3,8 @@ import threading
 import queue
 from typing import List
 
+import sys
+
 class CommandExecutor:
     def __init__(self, cmd: List[str]):
         self.cmd = cmd
@@ -45,12 +47,11 @@ class CommandExecutor:
             self.output_thread()
             self.input_thread()
             print("Command execution completed!")
-            return self.output_lines
-        except subprocess.CalledProcessError as e:
-            error_output = e.output.decode("utf-8")
-            print("Command execution failed with error:")
-            self.output_lines =  error_output.split("\n")
-            return self.output_lines
+            
+        except Exception as e:
+            error_message = str(e)
+            print("!!!An error occurred:", error_message)
+            sys.exit(1)
 
 # if __name__ == "__main__":
 #     command = ["sudo", "docker", "ps"]
