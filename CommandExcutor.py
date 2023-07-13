@@ -47,6 +47,7 @@ class CommandExecutor:
             self.output_thread()
             self.input_thread()
             print("Command execution completed!")
+            return self.output_lines
             
         except Exception as e:
             error_message = str(e)
