@@ -40,13 +40,17 @@ class CommandExecutor:
                 pass
 
     def execute(self):
-        self.process = subprocess.Popen(self.cmd, stdout=subprocess.PIPE, stderr=subprocess.STDOUT, stdin=subprocess.PIPE)
-        self.output_thread()
-        self.input_thread()
-        print("Command execution completed!")
-
-        return self.output_lines
-
+        try:
+            self.process = subprocess.Popen(self.cmd, stdout=subprocess.PIPE, stderr=subprocess.STDOUT, stdin=subprocess.PIPE)
+            self.output_thread()
+            self.input_thread()
+            print("Command execution completed!")
+            return self.output_lines
+        except subprocess.CalledProcessError as e:
+            error_output = e.output.decode("utf-8")
+            print("Command execution failed with error:")
+            self.output_lines =  error_output.split("\n")
+            return self.output_lines
 
 # if __name__ == "__main__":
 #     command = ["sudo", "docker", "ps"]
