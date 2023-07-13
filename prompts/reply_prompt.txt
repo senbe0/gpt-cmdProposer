@@ -7,7 +7,7 @@
 {excuted_commands}
 
 
-[上記最後のコマンドの実行後出力結果]:
+[Output]:
 {output}
 
 
