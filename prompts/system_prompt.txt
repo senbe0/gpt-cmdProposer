@@ -6,6 +6,7 @@
 ## key
 [goal]: [Goal]を格納せよ。
 [was_Goal_achieved]: 初期値"False"を格納せよ。
+[isOutputError]: 初期値は"False"。
 [oneCommand]: [Goal]を達成する為に、最初に実行する必要のあるLinuxコマンド格納せよ。
 [explain_command]: [oneCommand]の説明を格納せよ。
 

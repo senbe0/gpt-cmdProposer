@@ -48,17 +48,12 @@ def main():
                 excuted_commands.pop()
             except:
                 pass
-            print("====================")
-            print(suggest_json["explain_error"])
-            print("====================")
-            suggested_command= suggest_json["oneCommand"]
-            command = prompt("エラーを修正、回避する為に、次のコマンドを実行します(編集可能)。\n", default=suggested_command)
-        else:
-            print("====================")
-            print(suggest_json["explain_command"])
-            print("====================")
-            suggested_command= suggest_json["oneCommand"]
-            command = prompt("次のコマンドを実行します(編集可能)。\n", default=suggested_command)
+
+        print("====================")
+        print(suggest_json["explain_command"])
+        print("====================")
+        suggested_command= suggest_json["oneCommand"]
+        command = prompt("次のコマンドを実行します(編集可能)。\n", default=suggested_command)
 
         excuted_commands.append(command)
         executor = CommandExecutor(command.split(" "))

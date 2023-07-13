@@ -57,6 +57,10 @@ class ChatSession:
                             "type": "string",
                             "description": "初期値はFalse。"
                         },
+                        "isOutputError": {
+                            "type": "string",
+                            "description": "True or False"
+                        },
                         "oneCommand": {
                             "type": "string",
                             "description": "goalを達成するような、Linuxコマンドを一つ、格納する。"
@@ -69,6 +73,7 @@ class ChatSession:
                     },
                     "required": ["goal",
                                  "was_Goal_achieved",
+                                 "isOutputError",
                                  "oneCommand",
                                  "explain_command"]
                 }
