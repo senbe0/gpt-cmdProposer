@@ -50,8 +50,10 @@ class CommandExecutor:
             
         except Exception as e:
             error_message = str(e)
+            self.output_lines = error_message.split("\n")
             print("!!!An error occurred:", error_message)
-            sys.exit(1)
+            print(f"list?: {self.output_lines}")
+            return self.output_lines
 
 # if __name__ == "__main__":
 #     command = ["sudo", "docker", "ps"]
