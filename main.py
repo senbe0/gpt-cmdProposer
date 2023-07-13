@@ -14,7 +14,7 @@ def make_reply_prompt(goal: str, excuted_commands: List[str], terminal_output: L
 
         excuted_commands_str = "\n".join([str(row) for row in excuted_commands])
         terminal_output_str = "\n".join([str(row) for row in terminal_output])
-        
+
         content = content.replace("{goal}", f"{goal}")
         content = content.replace("{excuted_commands}", f"{excuted_commands_str}")
         content = content.replace("{output}", f"{terminal_output_str}")
@@ -28,8 +28,9 @@ def main():
     goal = input("こんにちは、あなたをサポートします。\n最終目標を入力してください: ")
     chat = gpt.ChatSession(goal)
     suggest_json = chat.send_msg()
-    chat.delete_msg()
+    
     while True:
+        chat.delete_msg()
         print("executed commands: ", excuted_commands)
         if suggest_json["was_Goal_achieved"] == "True":
             print("====================")
@@ -41,7 +42,7 @@ def main():
         print("*********")
         print(suggest_json)
         print("*********")
-        
+
         if suggest_json["isOutputError"] == "True":
             try:
                 excuted_commands.pop()
@@ -74,10 +75,8 @@ def main():
         print("送信用Output^^^^^^^^^^")
 
         suggest_json = chat.send_msg()
-        assistant_msg = {"role": "assistant", "content": json.dumps(suggest_json)}
-        chat.append_msg(assistant_msg)
 
-        
-    
+
+
 if __name__ == "__main__":
     main()

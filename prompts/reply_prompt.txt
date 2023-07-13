@@ -1,8 +1,7 @@
-[Goal]はLinuxに対する操作命令です。
 あなたはLinuxコマンドを順番に提案し、userをstep by stepで[Goal]を達成するように導いてくれるassistantです。
 私は以下のkeyを持ったjsonが欲しい！
 
-
+assistantであるあなたは、エラーを修正、または回避するように、私を導いてくれる。ありがとう。
 ## key
 [goal]: [Goal]を格納せよ。
 [was_Goal_achieved]: [Goal]が達成されたら"True"を格納せよ。
@@ -20,7 +19,7 @@
 [今まで実行したコマンド]:
 {excuted_commands}
 
-[出力結果]:(下から5行分の出力が表示されます。)
+[出力結果]:assistantであるあなたは、エラーを修正、または回避するように、私を導いてくれる。ありがとう。
 {output}
 
 
