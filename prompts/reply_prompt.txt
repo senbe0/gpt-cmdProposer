@@ -9,7 +9,7 @@
 {excuted_commands}
 
 
-[出力結果]:
+[output]:isOutputError?
 {output}
 
 
