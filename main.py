@@ -28,6 +28,7 @@ def main():
     chat = gpt.ChatSession(goal)
     suggest_json = chat.send_msg()
     while True:
+        print("executed commands: ", excuted_commands)
         chat.delete_msg()
         if suggest_json["was_Goal_achieved"] == "True":
             print("====================")
@@ -39,27 +40,24 @@ def main():
         print("*********")
         print(suggest_json)
         print("*********")
-
-        # suggest_json = json.loads("""\
-        #         {
-        #             "goal": "update apt index",
-        #             "oneCommand": "sudo apt update",
-        #             "explain": "apt updateコマンドは、APTインデックスを更新するために使用されます。このコマンドを実行すると、システムはリモートリポジトリに接続し、最新のパッケージ情報を取得してローカルのAPTインデックスを更新します。",
-        #             "isError": "False"
-        #         }\
-        #         """)
         
         if suggest_json["isOutputError"] == "True":
-            if excuted_commands:
+            try:
                 excuted_commands.pop()
+            except:
+                pass
+            print("====================")
+            print(suggest_json["explain_oneCommand_to_fix_error"])
+            print("====================")
+            suggested_command= suggest_json["oneCommand_to_fix_error"]
+            command = prompt("エラーを修正、回避する為に、次のコマンドを実行します(編集可能)。\n", default=suggested_command)
+        else:
+            print("====================")
+            print(suggest_json["explain_command"])
+            print("====================")
+            suggested_command= suggest_json["oneCommand"]
+            command = prompt("次のコマンドを実行します(編集可能)。\n", default=suggested_command)
 
-        suggested_command= suggest_json["oneCommand"]
-
-        print("====================")
-        print(suggest_json["command_explain"])
-        print("====================")
-
-        command = prompt("次のコマンドを実行します(編集可能)。\n", default=suggested_command)
         excuted_commands.append(command)
         executor = CommandExecutor(command.split(" "))
         output_lines = executor.execute()

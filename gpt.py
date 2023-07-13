@@ -61,7 +61,7 @@ class ChatSession:
                             "type": "string",
                             "description": "goalを達成するような、Linuxコマンドを一つ、格納する。"
                         },
-                        "command_explain": {
+                        "explain_command": {
                             "type": "string",
                             "description": "コマンドの説明等を格納する。"
                         },
@@ -69,9 +69,22 @@ class ChatSession:
                             "type": "string",
                             "description": "初期値はFalse。"
                         },
-                        
+                        "oneCommand_to_fix_error": {
+                            "type": "string",
+                            "description": "エラーを修正、または回避するような別のコマンドを格納する。"
+                        },
+                        "explain_oneCommand_to_fix_error": {
+                            "type": "string",
+                            "description": "oneCommand_to_fix_errorの説明等を格納する。"
+                        }
                     },
-                    "required": ["goal", "was_Goal_achieved", "oneCommand", "command_explain", "isOutputError"]
+                    "required": ["goal",
+                                 "was_Goal_achieved",
+                                 "oneCommand",
+                                 "explain_command",
+                                 "oneCommand_to_fix_error",
+                                 "explain_oneCommand_to_fix_error",
+                                 "isOutputError"]
                 }
             }
         ]
