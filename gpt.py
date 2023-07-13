@@ -69,7 +69,7 @@ class ChatSession:
                             "type": "string",
                             "description": "初期値はFalse。"
                         },
-                        "LinuxCommand_to_fix_error": {
+                        "FixErrorOneCommand": {
                             "type": "string",
                             "description": "エラーを修正、または回避するような別のコマンドを格納する。"
                         },
@@ -82,7 +82,7 @@ class ChatSession:
                                  "was_Goal_achieved",
                                  "oneCommand",
                                  "explain_command",
-                                 "LinuxCommand_to_fix_error",
+                                 "FixErrorOneCommand",
                                  "explain_error",
                                  "isOutputError"]
                 }
